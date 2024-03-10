@@ -164,6 +164,12 @@ async def set_smart_sensors(hass, line, instance_name):
                 
                 short_sensor_name = f"{sentence_id[2:]}_{idx}"
                 sensor_info = hass.data[smart0183serial_data_key].get(short_sensor_name)
+                
+                # If sensor_info does not exist, skip this loop iteration
+                if sensor_info is None:
+                    _LOGGER.debug(f"Skipping creation/update for undefined sensor: {sensor_name}")
+                    continue
+
                 full_desc = sensor_info["full_description"] if sensor_info else sensor_name
                 group = sensor_info["group"]
                 sentence_description = sensor_info["sentence_description"]
@@ -388,6 +394,11 @@ class SerialSensor(SensorEntity):
         dsrdtr,
         **kwargs,
     ):
+        
+        
+        last_processed = {}  # Dictionary to store last processed timestamp for each sentence type
+        min_interval = timedelta(seconds=5)  # Minimum time interval between processing each sentence type
+
         """Read the data from the port."""
         logged_error = False
         while True:
@@ -431,8 +442,16 @@ class SerialSensor(SensorEntity):
                             _LOGGER.error("Failed to decode line from UTF-8: %s", exc)
                             continue
 
-                        # _LOGGER.debug("Received: %s", line)
-                        await set_smart_sensors(self.hass,line,self.name)
+                        sentence_type = line[:6]  
+                        
+                        now = datetime.now()
+                        
+                        if sentence_type not in last_processed or now - last_processed[sentence_type] >= min_interval:
+                            _LOGGER.debug(f"Processing: {line}")
+                            await set_smart_sensors(self.hass, line, self.name)
+                            last_processed[sentence_type] = now
+                        else:
+                            _LOGGER.debug(f"Skipping {sentence_type} due to throttling")
 
 
 
