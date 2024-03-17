@@ -397,7 +397,7 @@ class SerialSensor(SensorEntity):
         
         
         last_processed = {}  # Dictionary to store last processed timestamp for each sentence type
-        min_interval = timedelta(seconds=5)  # Minimum time interval between processing each sentence type
+        min_interval = timedelta(seconds=3)  # Minimum time interval between processing each sentence type
 
         """Read the data from the port."""
         logged_error = False
