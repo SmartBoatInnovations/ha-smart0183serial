@@ -60,6 +60,10 @@ async def update_sensor_availability(hass,instance_name):
         for sensor in hass.data[created_sensors_key].values():
             sensor.update_availability()
 
+def load_smart_data(json_path):
+    with open(json_path, "r") as file:
+        return json.load(file)
+
 
 # The main setup function to initialize the sensor platform
 
@@ -99,9 +103,8 @@ async def async_setup_entry(hass, entry, async_add_entities):
     config_dir = hass.config.config_dir
     json_path = os.path.join(config_dir, 'custom_components', 'smart0183serial', 'Smart0183serial.json')
     try:
-        with open(json_path, "r") as file:
-            smart_data = json.load(file)
-
+        smart_data = await hass.async_add_executor_job(load_smart_data, json_path)
+        
         result_dict = {}
         for sentence in smart_data:
             group = sentence["group"]  # Capture the group for all fields within this sentence
@@ -437,7 +440,7 @@ class SmartSensor(SensorEntity):
     def device_info(self):
         """Return device information about this sensor."""
         return {
-            "identifiers": {("smart0183tcp", self._device_name)},
+            "identifiers": {("smart0183serial", self._device_name)},
             "name": self._device_name,
             "manufacturer": self._group,
             "model": self._sentence_type,
