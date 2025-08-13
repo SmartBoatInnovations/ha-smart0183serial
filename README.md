@@ -1,16 +1,24 @@
 # ha-smart0183serial
 
-## Smart Boat 0183 SERIAL Integration
+## NMEA 0183 Serial Integration for Home Assistant
 
-![Alt text for your image](.github/smart0183serial.png)
+![Smart Boat 0183 Serial Integration](.github/smart0183serial.png)
 
-I'm Rob, a seasoned sailor and tech enthusiast dedicated to revolutionizing the boating industry through the integration of accessible technology. With over 20 years of global sailing experience and a Computer Science degree, I am committed to providing you with practical innovations and ideas that will transform your boating experience. At Smart Boat Innovations, we explore the world of boat automation and harness the power of the Internet of Things (IoT) technology.
+The **ha-smart0183serial** integration lets **Home Assistant** receive real-time **NMEA 0183** data via a direct USB-to-RS232/RS422 cable connection. This hard-wired method delivers a stable, interference-free data feed for monitoring wind, depth, speed, GPS, and other marine instruments directly in your dashboards. Perfect for **Raspberry Pi**-based central marine computers and boat automation projects where reliability is key.
 
-My philosophy revolves around utilizing free open systems and affordable sensors and equipment. I believe that everyone should have access to these advancements without breaking the bank. While our website https://www.smartboatinnovations.com/ provides valuable insights and information, the majority of our content can be found on our YouTube channel. https://www.youtube.com/@SmartBoatInnovations
-I invite you to head over there, subscribe to our channel, and join the vibrant community of boating enthusiasts who are exploring the exciting possibilities of affordable technology.
+📖 **General NMEA 0183 article:** [NMEA 0183 – Home Assistant, Wi-Fi, Signal K, and Serial](https://smartboatinnovations.com/nmea-0183-home-assistant-wifi-signal-k-serial/)  
+🔗 **Integration setup guide:** [NMEA 0183 Serial integration guide](https://smartboatinnovations.com/code/smart0183-serial/)  
+💡 **Related project:** [Build a Central Marine Computer](https://smartboatinnovations.com/build-central-marine-computer/)  
+🌐 **Smart Boat Innovations homepage:** [smartboatinnovations.com](https://smartboatinnovations.com)  
 
-For instructions on using this ha-smart0183 integration go to 
-https://smartboatinnovations.com/code/smart0183-serial/
-or watch this video guide: https://youtu.be/VxIcNZlDbTI
+🎥 **Video tutorial:** [Watch on YouTube](https://youtu.be/VxIcNZlDbTI)
 
-<a href='https://ko-fi.com/smartboatinnovations' target='_blank'><img height='35' style='border:0px;height:46px;' src='https://az743702.vo.msecnd.net/cdn/kofi3.png?v=0' border='0' alt='Buy Me a Coffee at ko-fi.com' />
+---
+
+### About Smart Boat Innovations
+I'm Rob, a sailor and tech enthusiast with over 20 years of global sailing experience and a Computer Science degree. At **Smart Boat Innovations**, we focus on open-source marine electronics, **Raspberry Pi**, **ESP32**, **NMEA 0183**, **NMEA 2000**, and **Home Assistant** projects that make boating smarter, safer, and more affordable.
+
+💬 Subscribe to our [YouTube channel](https://www.youtube.com/@SmartBoatInnovations) for more projects, ideas, and tutorials.  
+🧭 Join the discussion on [r/smartboating on Reddit](https://www.reddit.com/r/smartboating)
+
+☕ If you’ve found this useful, you can [support my work on Ko-fi](https://ko-fi.com/smartboatinnovations).
