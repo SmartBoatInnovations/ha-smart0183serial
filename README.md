@@ -19,6 +19,7 @@ The **ha-smart0183serial** integration lets **Home Assistant** receive real-time
 I'm Rob, a sailor and tech enthusiast with over 20 years of global sailing experience and a Computer Science degree. At **Smart Boat Innovations**, we focus on open-source marine electronics, **Raspberry Pi**, **ESP32**, **NMEA 0183**, **NMEA 2000**, and **Home Assistant** projects that make boating smarter, safer, and more affordable.
 
 💬 Subscribe to our [YouTube channel](https://www.youtube.com/@SmartBoatInnovations) for more projects, ideas, and tutorials.  
+
 🧭 Join the discussion on [r/smartboating on Reddit](https://www.reddit.com/r/smartboating)
 
 ☕ If you’ve found this useful, you can [support my work on Ko-fi](https://ko-fi.com/smartboatinnovations).
