@@ -43,12 +43,9 @@ class Smart0183SERIALConfigFlow(config_entries.ConfigFlow, domain="smart0183seri
     @callback
     def async_get_options_flow(config_entry):
         _LOGGER.debug("Getting options flow handler")
-        return OptionsFlowHandler(config_entry)
+        return OptionsFlowHandler()
 
 class OptionsFlowHandler(config_entries.OptionsFlow):
-    def __init__(self, config_entry):
-        _LOGGER.debug("Initializing OptionsFlowHandler with config_entry: %s", config_entry)
-        self.config_entry = config_entry
 
     async def async_step_init(self, user_input=None):
         _LOGGER.debug("OptionsFlowHandler.async_step_init called with user_input: %s", user_input)
