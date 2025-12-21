@@ -17,7 +17,7 @@ import asyncio
 import json
 import logging
 import os
-import serial_asyncio
+import serial_asyncio_fast as serial_asyncio
 from datetime import datetime, timedelta
 from serial import SerialException
 
